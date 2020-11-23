@@ -1,4 +1,4 @@
-def estimate_time(processer_frequency):
+def estimate_time(processer_frequency,accuracy):
     from functools import reduce
     n=len(paths)
     def ncr(n, r):
@@ -7,8 +7,7 @@ def estimate_time(processer_frequency):
         denom = reduce(op.mul, range(1, r+1), 1)
         return numer // denom  # or / in Python 2
     s=0
-    p=3
     for i in range(1, n+1):
-        s += i*p*(ncr(n, i))
+        s += i*accuracy*(ncr(n, i))
         k = s/(processer_frequency)
     return(k)
