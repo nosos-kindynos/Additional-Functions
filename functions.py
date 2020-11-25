@@ -78,7 +78,7 @@ def simulate(source, mapping, risk_mapping):
                 if infect(k) == True:
                     infected.append(vertex)
                     transfer_que.append(vertex)
-        transfer_que.remove(current)
+        transfer_que.pop(0)
         if transfer_que == []:
             break
         else:
