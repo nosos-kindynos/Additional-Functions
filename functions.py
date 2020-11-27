@@ -2,7 +2,7 @@ from functools import reduce
 import operator as op
 from math import comb
 
-def relative_map(source,sources,mapping):
+def relative_map(sources,mapping):
     for source in sources:
         relative_mapping = mapping.copy()
         other_sources=sources.copy()
