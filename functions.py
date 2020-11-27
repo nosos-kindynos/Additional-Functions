@@ -3,18 +3,21 @@ import operator as op
 from math import comb
 
 def relative_map(source,sources,mapping):
-    relative_mapping = mapping.copy()
-    other_sources=sources.copy()
-    other_sources.remove(source)
-    for other_source in other_sources:
-        relative_mapping.pop(other_source)
-    for vertex in relative_mapping:
-        connections=relative_mapping.get(vertex)
-        for connection in connections:
-            if connection in other_sources:
-                connections.remove(connection)
-        relative_mapping.update({vertex:connections})
-    return(relative_mapping)
+    for source in sources:
+        relative_mapping = mapping.copy()
+        other_sources=sources.copy()
+        other_sources.remove(source)
+        for other_source in other_sources:
+            relative_mapping.pop(other_source)
+        for vertex in relative_mapping:
+            connections=relative_mapping.get(vertex)
+            connections_copy=connections.copy()
+            for connection in connections_copy:
+                if connection in other_sources:
+                    connections.remove(connection)
+            relative_mapping.update({vertex:connections})
+        relative_mappings.append(relative_mapping)
+     return(relative_mappings)
 
 def convert_path_to_edges(paths):
     path_list=[]
