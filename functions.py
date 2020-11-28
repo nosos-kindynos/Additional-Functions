@@ -40,7 +40,12 @@ def eq(x,y):
     else:
         return(False)
 
-
+def get_risk(relation,risk_mapping):
+    risk=risk_mapping.get(relation)
+    if risk==None:
+        risk=risk_mapping.get((relation[1],relation[0]))
+        
+        
 def distinct(x):
     k = []
     for i in x:
