@@ -76,23 +76,25 @@ def infect(risk):
 
 
 def simulate(source, mapping, risk_mapping):
+    
     current = source
     infected = [source]
     transfer_que = [source]
+    
     while True:
+        
         for vertex in mapping[current]:
             if vertex not in infected and infect(get_risk((vertex,current),risk_mapping)) == True:
                 infected.append(vertex)
                 transfer_que.append(vertex)
+                
         transfer_que.pop(0)
         if transfer_que == []:
             break
         else:
             current = transfer_que[0]
+    
     return(infected)
 
 
-mapping = {1: [2, 3, 4, 5, 6, 7], 2: [1, 3, 4, 5, 6, 7], 3: [1, 2, 4, 5, 6, 7],
-           4: [1, 2, 3, 5, 6, 7], 5: [1, 2, 3, 4, 6, 7], 6: [1, 2, 3, 4, 5, 7], 7: [1, 2, 3, 4, 5, 6]}
 
-print(relative_map(1,[1,2,3],mapping))
