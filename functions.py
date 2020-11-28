@@ -81,13 +81,9 @@ def simulate(source, mapping, risk_mapping):
     transfer_que = [source]
     while True:
         for vertex in mapping[current]:
-            k = risk_mapping.get((current, vertex))
-            if k == None:
-                k = risk_mapping.get((vertex, current))
-            if vertex not in infected:
-                if infect(k) == True:
-                    infected.append(vertex)
-                    transfer_que.append(vertex)
+            if vertex not in infected and infect(get_risk((vertex,current),risk_mapping)) == True:
+                infected.append(vertex)
+                transfer_que.append(vertex)
         transfer_que.pop(0)
         if transfer_que == []:
             break
