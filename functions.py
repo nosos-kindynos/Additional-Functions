@@ -1,10 +1,11 @@
 from functools import reduce
 import operator as op
 from math import comb
+from copy import deepcopy
 
 def relative_map(source,sources,mapping):
     
-    relative_mapping = mapping.copy()
+    relative_mapping = deepcopy(mapping)
     other_sources=sources.copy()
     other_sources.remove(source)
     for other_source in other_sources:
