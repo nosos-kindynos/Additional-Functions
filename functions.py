@@ -34,8 +34,13 @@ def average(x):
 
 def weighted_average(x,y,k):
     h=max([x,y])
-    f=int([x,y].remove(h))
-    return(((h-f)*k)+f)
+    k=[x,y]
+    k.remove(h)
+    f=k[0]
+    if l[0]==l[1]:
+        return(f)
+    else:
+        return(((l[0]*y)+(l[1]*x))/(l[0]+l[1]))
 
 def eq(x,y):
     x = list(x)
