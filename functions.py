@@ -34,7 +34,7 @@ def average(x):
 
 def weighted_average(x,y,k):
     if l[0]==l[1]:
-        return(average(x,y)
+        return(average([x,y]))
     else:
         return(((l[0]*y)+(l[1]*x))/(l[0]+l[1]))
 
