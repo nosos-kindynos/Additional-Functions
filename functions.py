@@ -29,6 +29,13 @@ def convert_path_to_edges(paths):
         path_list.append(tuple(vertex_to_vertex))
     return(path_list)
 
+def average(x): 
+    return(sum(x)/len(x))
+
+def weighted_average(x,y,k):
+    h=max([x,y])
+    f=int([x,y].remove(h))
+    return(((h-f)*k)+f)
 
 def eq(x,y):
     x = list(x)
