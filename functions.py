@@ -33,12 +33,8 @@ def average(x):
     return(sum(x)/len(x))
 
 def weighted_average(x,y,k):
-    h=max([x,y])
-    k=[x,y]
-    k.remove(h)
-    f=k[0]
     if l[0]==l[1]:
-        return(f)
+        return(average(x,y)
     else:
         return(((l[0]*y)+(l[1]*x))/(l[0]+l[1]))
 
