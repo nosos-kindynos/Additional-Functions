@@ -32,6 +32,12 @@ def convert_path_to_edges(paths):
 def average(x): 
     return(sum(x)/len(x))
 
+def other_vertex(vertex,edge):
+    if vertex==edge[0]:
+        return(edge[1])
+    else:
+        return(edge[0])
+
 def weighted_average(x,y,k):
     if l[0]==l[1]:
         return(average([x,y]))
