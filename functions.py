@@ -144,3 +144,14 @@ def read(file):
 
     return([list_of_amdno,data])
 
+
+def count_all_paths(paths):
+    count={}
+    for edge in paths:
+        if edge in count:
+            k=count.get(edge)
+            k+=1
+            count.update({edge:k})
+        else:
+            count.update(edge:1)
+    return(count)
