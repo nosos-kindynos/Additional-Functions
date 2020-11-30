@@ -7,7 +7,8 @@ def relative_map(source,sources,mapping):
     
     relative_mapping = deepcopy(mapping)
     other_sources=sources.copy()
-    other_sources.remove(source)
+    if source!=None:
+        other_sources.remove(source)
     for other_source in other_sources:
         relative_mapping.pop(other_source)
     for vertex in relative_mapping:
