@@ -153,5 +153,5 @@ def count_all_paths(paths):
             k+=1
             count.update({edge:k})
         else:
-            count.update(edge:1)
+            count.update({edge:1})
     return(count)
