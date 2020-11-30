@@ -58,6 +58,7 @@ def get_risk(relation,risk_mapping):
     risk=risk_mapping.get(relation)
     if risk==None:
         risk=risk_mapping.get((relation[1],relation[0]))
+    return(risk)
         
         
 def distinct(x):
