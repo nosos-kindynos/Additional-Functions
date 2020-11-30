@@ -2,6 +2,7 @@ from functools import reduce
 import operator as op
 from math import comb
 from copy import deepcopy
+import csv
 
 def relative_map(source,sources,mapping):
     
@@ -39,7 +40,7 @@ def other_vertex(vertex,edge):
     else:
         return(edge[0])
 
-def weighted_average(x,y,k):
+def weighted_average(x,y,l):
     if l[0]==l[1]:
         return(average([x,y]))
     else:
