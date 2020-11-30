@@ -111,5 +111,36 @@ def simulate(source, mapping, risk_mapping):
     
     return(infected)
 
+def read(file):
+    k = []
+    ladm = []
 
+    with open(file, 'r') as f:
+        reader = csv.reader(f)
+        for i in reader:
+            if len(i) == 4 and not i[3] == '':
+                x = i[3]
+                x = eval(x)
+                x = x[0]
+                k.append(x)
+                ladm.append(i[0])
+
+
+    temp_data = {}
+    for i in k:
+        temp_data.update(i)
+
+    data = {}
+    for i in temp_data:
+        contacts = []
+        for j in temp_data.get(i):
+            vertex = (int(j[0]), j[1])
+            contacts.append(vertex)
+        data.update({int(i): contacts})
+
+    list_of_amdno = []
+    for i in ladm:
+        list_of_amdno.append(int(i))
+
+    return([list_of_amdno,data])
 
